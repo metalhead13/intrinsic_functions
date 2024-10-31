@@ -1,0 +1,13 @@
+
+Description: Este template demuestra como usar la funcion Fn::ForEach para crear miltiples buckets
+
+Resources:
+  MyBuckets:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref ValueIdentifier
+    Metadata:
+      Fn::ForEach:
+        - Bucket1
+        - Bucket2
+        - Bucket3
